@@ -9,7 +9,7 @@ nav{
 
 .logo{
     color: white;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 60px;
     padding-left: 388px;
     float: left;
@@ -83,13 +83,23 @@ nav{
     background-image: url(../img/white_layer.jpg);
 }
 
-.about_me .inhalt{
-    padding: 108px;
+h2{
+    padding-top: 108px;
     font-size: 22px;
     color: #263244;
+    
+}
+.orange_line{
+    padding-top: 31px;
+    padding-bottom: 
+}
+.about_me .inhalt h4{
+    margin:0 auto;
+    font-size: 22px;
+    color: #263244;
+    
 }
 
 .WhatICan{
     background: url(../img/WhatICan.jpg);
 }
-
