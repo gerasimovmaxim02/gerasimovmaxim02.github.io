@@ -15,12 +15,12 @@
         <div class="logo">Герасимов Максим</div>
         <div class="menu">
             <ul>
-                <li>Обо мне</li>
-                <li>Услуги</li>
-                <li>Кейсы</li>
-                <li>Цены</li>
-                <li>Отзывы</li>
-                <li>Контакты</li>
+                <li><a href="#">Обо мне</a></li>
+                <li><a href="#">Услуги</a></li>
+                <li><a href="#">Кейсы</a></li>
+                <li><a href="#">Цены</a></li>
+                <li><a href="#">Отзывы</a></li>
+                <li><a href="#">Контакты</a></li>
             </ul>
         </div>
     </nav>
@@ -43,8 +43,8 @@
             <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br> Quae llio ducimus quis modi consequatur, hic aperiam soluta, autem expedita neque.</h4>
             <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Optio in velit porro accusamus, dolorem reiciendis!</h4>
             <div class="resume">
-                <img src="img/icons/download.png" alt="">
-                <a href="">Скачать резюме</a>
+                
+                <a href=""> <img src="img/icons/download.png" alt="">Скачать резюме</a>
             </div>
         </div>
     </div>
@@ -190,10 +190,10 @@
         <div class="message">
             <h3>Оставьте мне сообщение</h3>
             <form action="#">
-                <input type="text" name="text_input" placeholder="Имя" >
-                <input type="text" name="text_input" placeholder="Email">
+                <input type="name" name="name" placeholder="Имя" autocomplete="name" required>
+                <input type="email" name="email" placeholder="Email" autocomplete="email" required>
                 <br>
-                <textarea name="" id="" cols="30" rows="10" placeholder="Ваши пожелания"></textarea>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Ваши пожелания" required></textarea>
                 <br>
                 <input type="submit" value="Отправить" class="button">
             </form>
