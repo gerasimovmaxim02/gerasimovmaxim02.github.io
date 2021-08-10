@@ -59,27 +59,11 @@ nav{
     margin-left: 30px;
     font-size: 13px;
     text-transform: uppercase;
-    -webkit-animation: comming ease forwards 2s;
-    -o-animation: comming ease forwards 2s;
-    animation: comming ease forwards 2s; 
+    -webkit-animation: backInDown 1s;
+    -o-animation: backInDown 1s;
+    animation: backInDown 1s; 
 }
 
-
-.menu li:nth-child(2){
-    animation-delay: 0.2s;
-}
-.menu li:nth-child(3){
-    animation-delay: 0.4s;
-}
-.menu li:nth-child(4){
-    animation-delay: 0.6s;
-}
-.menu li:nth-child(5){
-    animation-delay: 0.8s;
-}
-.menu li:nth-child(6){
-    animation-delay: 1s;
-}
 
 .title__container{
     margin-top: 60px;
@@ -220,8 +204,7 @@ h2{
     width: 25%;
     display: block;
     float: left;
-    animation: backInDown;
-    animation-duration: 2s;
+    animation: lightSpeedInLeft 2s;
 }
 
 .cases{
@@ -287,6 +270,10 @@ h2{
     text-transform: uppercase;
     background-color: #63b5ae;
     color: white;
+    transition: 0.5s;
+}
+.client a:hover{
+    transform: scale(1.1);
 }
 
 .calculator{
@@ -341,7 +328,10 @@ h2{
     display: inline-block;
     background-image: url(../img/statistics.jpg);
     text-align: center;
+    
 }
+
+
 
 .stats{
     margin-top: 116px;
@@ -350,6 +340,9 @@ h2{
     width: 25%;
     display: block;
     float: left;
+}
+.stats>li:hover{
+    transform: scale(1.1);
 }
 .statistics h3{
     font-size: 15px;
@@ -437,10 +430,24 @@ h2{
     background-color: rgba(0, 0, 0, 0.0);
     border: 2px solid white;
     border-radius: 5px;
+    transition: 
+}
+.message .button:hover{
+    transform: scale(1.1);
 }
 
 .icons>li{
     display: inline-block;
     padding: 20px;
+}
+.icons>li:hover{
+    transform: scale(1.1);
+}
+
+
+@keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
