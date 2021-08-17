@@ -1,3 +1,17 @@
+@font-face {
+	font-family: 'Comfortaa';
+	src: url('../fonts/Comfortaa-VariableFont_wght.eot');
+	src: local('☺'), url('../fonts/Comfortaa-VariableFont_wght.woff') format('woff'), url('../fonts/Comfortaa-VariableFont_wght.ttf') format('truetype'), url('../fonts/Comfortaa-VariableFont_wght.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'framd';
+	src: url('../fonts/framd.eot');
+	src: local('☺'), url('../fonts/framd.woff') format('woff'), url('../fonts/framd.ttf') format('truetype'), url('../fonts/framd.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 @keyframes comming{
     from{opacity:0;}
     to{opacity:1;}
@@ -26,7 +40,7 @@
 }
 
 body{
-    font-family: Helvetica, sans-serif;
+    font-family:'framd', Helvetica, sans-serif;
 }
 nav{
     width: 100%;
@@ -37,7 +51,8 @@ nav{
 
 .logo{
     color: white;
-    font-size: 20px;
+    font-family: 'framd', Helvetica, sans-serif;
+    font-size: 35px;
     line-height: 60px;
     padding-left: 15%;
     float: left;
@@ -57,13 +72,17 @@ nav{
     line-height: 60px;
     color: white;
     margin-left: 30px;
-    font-size: 13px;
+    font-size: 14px;
     text-transform: uppercase;
     -webkit-animation: backInDown 1s;
     -o-animation: backInDown 1s;
-    animation: backInDown 1s; 
+    animation: backInDown 1s;
+    transition: 0.2s;
 }
 
+.menu li:hover{
+    transform: scale(1.1);
+}
 
 .title__container{
     margin-top: 60px;
@@ -89,14 +108,14 @@ nav{
 
 .title__container .inhalt h1{
     font-size: 60px;
-    font-weight: bold;
+    font-weight: 400;
 }
 
 .title__container .inhalt h4{
     color: #79818d;
     padding-top: 40px;
     font-size: 27px;
-    font-weight: 600;
+    font-weight: 300;
 }
 
 .title__container .inhalt a{
@@ -345,12 +364,14 @@ h2{
     transform: scale(1.1);
 }
 .statistics h3{
-    font-size: 15px;
+    margin-top: 3px;
+    font-size: 20px;
     color: #cf7600;
 }
 .statistics h4{
     color: #3f495a;
-    font-size: 12px;
+    margin-top: 3px;
+    font-size: 22px;
 }
 
 .responds{
@@ -414,11 +435,14 @@ h2{
     background-color: #d1d5dc;
     width: 350px;
     height: 35px;
-    margin-right: 30px;
+    /*margin-right: 30px;*/
     padding-left: 5px;
 }
+.emails{
+    margin-left: 30px;
+}
 .message textarea{
-    padding-left: 5px;
+    width: 730px;
     padding-top: 5px;
     margin-top: 15px;
     margin-bottom: 30px;
