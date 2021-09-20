@@ -39,6 +39,9 @@
     }
 }
 
+a{
+    text-decoration: none;
+}
 body{
     font-family:'framd', Helvetica, sans-serif;
 }
@@ -52,9 +55,8 @@ nav{
 .logo{
     color: white;
     font-family: 'framd', Helvetica, sans-serif;
-    font-size: 35px;
+    font-size: 20px;
     line-height: 60px;
-    padding-left: 15%;
     float: left;
     -webkit-animation: comming ease forwards 2s;
     -o-animation: comming ease forwards 2s;
@@ -63,15 +65,13 @@ nav{
 
 .menu{
     float: left;
-    padding-left: 400px;
-   
 }
 
 .menu li{
     float: left;
     line-height: 60px;
     color: white;
-    margin-left: 30px;
+    margin-right: 20px;
     font-size: 14px;
     text-transform: uppercase;
     -webkit-animation: backInDown 1s;
@@ -84,6 +84,9 @@ nav{
     transform: scale(1.1);
 }
 
+.white-btn:visited{
+    color: white;
+}
 .title__container{
     margin-top: 60px;
     float: left;
@@ -354,11 +357,13 @@ h2{
 
 .stats{
     margin-top: 116px;
+    
 }
 .stats>li{
     width: 25%;
     display: block;
     float: left;
+    transition: 0.2s;
 }
 .stats>li:hover{
     transform: scale(1.1);
