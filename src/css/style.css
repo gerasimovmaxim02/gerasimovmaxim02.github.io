@@ -83,7 +83,9 @@ nav{
 .menu li:hover{
     transform: scale(1.1);
 }
-
+.menu li:any-link{
+    color: white;
+}
 .white-btn:visited{
     color: white;
 }
