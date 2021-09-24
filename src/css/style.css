@@ -98,7 +98,7 @@ nav{
     float: left;
     width:100%;
     height: 1067px;
-    background: url(../img/I.png) 90% 100%/auto  no-repeat scroll , url(../img/whiteboard.jpg) 100% 100% repeat-x;
+    background: url(../img/I.png) 90% 100%/auto  no-repeat scroll , url(../img/whiteboard.jpg) center/cover no-repeat;
     
     
     
