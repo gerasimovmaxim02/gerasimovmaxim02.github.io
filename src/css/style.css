@@ -80,6 +80,9 @@ nav{
     transition: 0.2s;
 }
 
+.main{
+    padding-top: 60px;
+}
 .menu li:hover{
     transform: scale(1.1);
 }
@@ -90,7 +93,6 @@ nav{
     color: white;
 }
 .title__container{
-    margin-top: 60px;
     float: left;
     width:100%;
     height: 1067px;
@@ -103,7 +105,7 @@ nav{
 .title__container .inhalt{
     color: #2c384a;
     float: left;
-    margin: 432px 0px 0px 404px;
+    
     text-align: center;
     -webkit-animation: titleshift 1s;
     -o-animation: titleshift 1s;
@@ -118,17 +120,14 @@ nav{
 
 .title__container .inhalt h4{
     color: #79818d;
-    padding-top: 40px;
+    
     font-size: 27px;
     font-weight: 300;
 }
 
 .title__container .inhalt a{
     color: #6d7682;
-    margin-top: 55px;
-    margin-right: 14px;
-    margin-left: 14px;
-    padding: 14px 14px 14px 14px;
+    padding: 14px;
     display: inline-block;
     border: 2px solid #344051;
     box-sizing: 95 42;
@@ -174,8 +173,7 @@ h2{
     padding-bottom: 27px;
 }
 .about_me .inhalt h4{
-    margin:0 auto;
-    margin-bottom: 45px;
+    
     font-size: 22px;
     color: #3f495a;
     
