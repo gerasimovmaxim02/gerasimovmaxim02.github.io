@@ -52,6 +52,7 @@ nav{
     height: 60px;
     background: #344051;
     position: fixed;
+    z-index: 10;
 }
 
 .logo{
@@ -98,7 +99,7 @@ nav{
     float: left;
     width:100%;
     height: 1067px;
-    background: url(../img/I.png) 90% 100%/auto  no-repeat scroll , url(../img/whiteboard.jpg) center/cover no-repeat;
+    background: url(../img/I.png) 90% 100%/auto  no-repeat scroll , url(../img/whiteboard.jpg) 100% 100% repeat-x;
     
     
     
@@ -109,9 +110,10 @@ nav{
     float: left;
     
     text-align: center;
-    -webkit-animation: titleshift 1s;
+    /*-webkit-animation: titleshift 1s;
     -o-animation: titleshift 1s;
-    animation: titleshift 1s;
+    animation: titleshift 1s;*/
+    animation: backInLeft 1s;
     
 }
 
@@ -154,9 +156,9 @@ nav{
 .about_me{
     float:left;
     width: 100%;
-    height: 730px;
+    
     text-align: center;
-    background-image: url(../img/white_layer.jpg);
+    background-image: url(../img/white_layer.jpg) repeat;
 }
 
 h2{
@@ -179,6 +181,10 @@ h2{
     font-size: 22px;
     color: #3f495a;
     
+}
+.resume{
+    margin-top: 25px;
+    margin-bottom: 30px;
 }
 .resume a{
     color: #6f707e;
@@ -207,7 +213,7 @@ h2{
 .WhatICan{
     float:left;
     width: 100%;
-    height: 523px;
+    /*height: 523px;*/
     background: url(../img/WhatICan.jpg);
    text-align: center;
 }
@@ -223,11 +229,14 @@ h2{
 
 .ican{
     margin-top: 116px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+    flex: 1 1 300px;
 }
-.ican>li{
-    width: 25%;
-    display: block;
-    float: left;
+.ican >.column{
+    width: 300px;
     animation: lightSpeedInLeft 2s;
 }
 
@@ -236,26 +245,26 @@ h2{
     background-color: #fcfdfd;
     width: 100%;
     text-align: center;
+    
 }
 .images{
     text-align: center;
+    max-width: 100%;
 }
 
 .cases>h4{
     color: #3f495a;
     margin: 42px;
 }
+
 .client{
-    float: left;
-    display: inline-block;
-    margin-left:388px;
-    margin-right: 84px;
     margin-top: 43px;
+    
 }
 .project{
-    float:left;
-    display: inline-block;
+    
     margin-top: 43px;
+    
 }
 .project h3{
     font-weight: bold;
@@ -274,18 +283,22 @@ h2{
     color: #384354;
     text-transform: uppercase;
     margin-bottom: 14px;
+    text-align: left;
+    margin-left: 40px;
 }
 .client h4{
     padding-bottom: 14px;
     font-size: 19px;
     color: #3f495a;
+    text-align: left;
+    margin-left: 40px;
 }
 
 .client a{
-    display: inline-block;
+    /*display: inline-block;*/
     font-size: 16px;
     float:left;
-    margin-left: 20px;
+    margin-left: 40px;
     border: 1px solid #63b5ae;
     border-radius: 5px;
     line-height: 46px;
