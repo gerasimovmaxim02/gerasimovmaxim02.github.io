@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -127,8 +127,8 @@
 
             <div class="container">
                 <div class="row">
-                   
-                    <div class="client col-xl-2 col-lg-2 col-md-2 col-sm-4" >
+
+                    <div class="client col-xl-2 col-lg-2 col-md-2 col-sm-4">
                         <h3>Клиент:</h3>
                         <h4>Какой-то клиент</h4>
 
@@ -139,11 +139,11 @@
                         <a href="" class="VisitSiteLive">visit site live</a>
                     </div>
 
-                    <div class="project col-xl-9 offset-sm-1 col-lg-7 col-md-7 col-sm-6" >
+                    <div class="project col-xl-9 offset-sm-1 col-lg-7 col-md-7 col-sm-6">
                         <h3>Название проекта</h3>
                         <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Simliique quasi, <br>molestiae alias soluta nihli asperiores voluptates amet placeat hic odit lilum qui, iure eveniet magni, <br>deleniti laboriosam harum delectus consequatur aliquid optio enim ipsum veniam. <br>Tempora nostrum quasi tenetur, veritatis.</h4>
                     </div>
-                    
+
                 </div>
             </div>
 
@@ -172,41 +172,41 @@
                 <option value="Opt3_1">Вариант 1</option>
                 <option value="Opt3_2">Вариант 2</option>
             </select>
-            <div class="pic"><img src="img/line.png" alt=""></div>
+            <div class="line"></div>
             <h4>Сроки</h4>
             <h4>Цена</h4>
-
+            <div class="button"><a href="#">Оставьте заявку</a></div>
 
         </div>
         <div class="statistics">
 
             <h2>НЕМНОГО СТАТИСТИКИ</h2>
             <img src="img/orange_line.png" alt="" class="orange_line"> <br>
-            <ul class="stats">
-                <li>
+            <div class="stats">
+                <div class="column">
                     <img src="img/smile.png" alt="">
                     <h3>120</h3>
                     <h4>Счастливых клиентов</h4>
-                </li>
+                </div>
 
-                <li>
+                <div class="column">
                     <img src="img/brackets.png" alt="">
                     <h3>4600</h3>
                     <h4>Часов работы</h4>
-                </li>
+                </div>
 
-                <li>
+                <div class="column">
                     <img src="img/yes_sign.png" alt="">
                     <h3>340</h3>
                     <h4>Проектов завершено</h4>
-                </li>
+                </div>
 
-                <li>
+                <div class="column">
                     <img src="img/prize.png" alt="">
                     <h3>23</h3>
                     <h4>Наград получено</h4>
-                </li>
-            </ul>
+                </div>
+            </div>
             <div class="mask"></div>
         </div>
         <div class="responds">
@@ -221,31 +221,36 @@
             <h2>МОИ КОНТАКТЫ</h2>
             <img src="img/orange_line.png" alt="" class="orange_line"> <br>
             <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Possimus voluptate neque error et.</h4>
-            <ul class="contact_me">
-                <li>
+            <div class="contact_me">
+                <div class="column">
                     <img src="img/geo.png" alt="">
                     <h4>Россия, Санкт-Петербург</h4>
-                </li>
-                <li>
+                </div>
+                <div class="column mail">
                     <img src="img/envelope.png" alt="">
-                    <h4>gerasimovmaxim02@gmali.com</h4>
-                </li>
-                <li>
+                    <h4>12345@mail.ru</h4>
+                </div>
+                <div class="column">
                     <img src="img/phone.png" alt="">
                     <h4>+71231231212</h4>
-                </li>
-            </ul>
+                </div>
+            </div>
 
             <div class="message">
                 <h3>Оставьте мне сообщение</h3>
                 <form action="#">
-                    <input type="name" name="name" placeholder="Имя" autocomplete="name" required>
+                    <div class="container">
+                        <div class="row">
+                            <input class="col-xl-4 offset-xl-2 offset-lg-1 col-lg-3 " type="name" name="name" placeholder="Имя" autocomplete="name" required>
 
-                    <input type="email" name="email" placeholder="Email" autocomplete="email" required>
+                            <input type="email" class="col-xl-4 col-lg-3 offset-lg-1" name="email" placeholder="Email" autocomplete="email" required>
+                        </div>
+                    </div>
                     <br>
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Ваши пожелания" required></textarea>
+                    <div class="container">
+                    <textarea name="" class="offset-xl-2 offset-lg-1 col-xl-9 col-lg-7" id="" cols="30" rows="10" placeholder="Ваши пожелания" required></textarea>
                     <br>
-                    <input type="submit" value="Отправить" class="button">
+                    <input type="submit" value="Отправить" class="button"></div>
                 </form>
             </div>
             <ul class="icons">
