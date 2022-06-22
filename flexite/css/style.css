@@ -1,0 +1,111 @@
+a{
+    text-decoration: none;
+}
+body{
+    font-family:'Montserrat', Helvetica, sans-serif;
+    width: 100%;
+    max-width: 100%;
+    background: black;
+}
+nav{
+    width: 100%;
+    height: 125px;
+    background: #151111;
+    position: fixed;
+    z-index: 10;
+}
+
+.logo{
+    color: white;
+    line-height: 125px;
+    float: left;
+    -webkit-animation: comming ease forwards 2s;
+    -o-animation: comming ease forwards 2s;
+    animation: comming ease forwards 2s;
+}
+
+.name{
+    display: inline-block;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+}
+
+.slogan{
+    display: inline-block;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+}
+
+.menu{
+    float: left;
+}
+
+.menu li a:any-link{
+    color: white;
+}
+
+.menu li{
+    float: left;
+    line-height: 125px;
+    color: white;
+    margin-right: 20px;
+    font-size: 14px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    
+    -webkit-animation: backInDown 1s;
+    -o-animation: backInDown 1s;
+    animation: backInDown 1s;
+    transition: 0.2s;
+}
+
+.main{
+    padding-top: 60px;
+}
+.menu li:hover{
+    transform: scale(1.1);
+}
+.menu li:any-link{
+    color: white;
+}
+.white-btn:visited{
+    color: white;
+}
+
+.btn{
+    border: 0 solid transparent;
+}
+.btn-outline-secondary:hover{
+    background:  #151111;
+}
+
+.btn-outline-secondary.dropdown-toggle.show, .btn-outline-secondary:active {
+  color: #fff;
+  background-color: #151111;
+  border-color: #151111;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+
+
+@media (max-width: 992px){
+    .name{
+        font-size: 28px;
+    }
+    
+    .slogan{
+        font-size: 6px;
+        line-height: 8px;
+    }
+}
