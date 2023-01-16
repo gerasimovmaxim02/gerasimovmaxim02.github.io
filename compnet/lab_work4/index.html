@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Лабораторная работа №4 - My Docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Web-программирование 2022-2023</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../lab_work1/" class="nav-link">Лабораторная работа №1</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../lab_work2/" class="nav-link">Лабораторная работа №2</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../lab_work3/" class="nav-link">Lab work3</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Лабораторная работа №4</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../pr_w_3/" class="nav-link">Практическая работа 3.1</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../lab_work3/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../pr_w_3/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#no4" class="nav-link">Лабораторная работа №4</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">Задание</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">Основные файлы:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="no4">Лабораторная работа №4</h1>
+<h2 id="_1">Задание</h2>
+<ul>
+<li>Утвердить с одним из преподавателей список интерфейсов для взаимодействия с серверной частью в соответствии с вашей предметной областью.</li>
+<li>Реализовать интерфейсы авторизации, регистрации и изменения учётных данных и настроить взаимодействие с серверной частью.</li>
+<li>Реализовать клиентские интерфейсы и настроить взаимодействие с серверной частью.</li>
+<li>Подключить vuetify или аналогичную библиотеку.</li>
+</ul>
+<h2 id="_2">Основные файлы:</h2>
+<p><code>index.js</code></p>
+<pre><code class="language-javascript">import Vue from 'vue';
+import VueRouter from 'vue-router';
+
+
+import SignIn from '../views/profile/SignIn.vue'
+import SignUp from '../views/profile/SignUp.vue'
+import Home from '../views/Home.vue'
+import Profile from '../views/profile/Profile.vue'
+import ProfileEdit from '../views/profile/ProfileEdit.vue'
+import LogOut from '../views/profile/LogOut.vue'
+import ParticipationView from &quot;@/components/ParticipationView.vue&quot;;
+import ExpertsView from &quot;@/components/ExpertsView.vue&quot;;
+import ParticipantsView from &quot;@/components/ParticipantsView.vue&quot;;
+import CosRegister from &quot;@/views/profile/CosRegister.vue&quot;;
+import CosScoring from &quot;@/views/profile/CosScoring.vue&quot;
+
+Vue.use(VueRouter)
+
+const routes = [
+  {
+    path: '/',
+    name: 'home',
+    component: Home
+  },
+  {
+    path: '/cosplay/signup',
+    name: 'signup',
+    component: SignUp
+  },
+  {
+    path: '/cosplay/logout',
+    name: 'logout',
+    component: LogOut
+  },
+  {
+    path: '/cosplay/signin',
+    name: 'signin',
+    component: SignIn
+  },
+  {
+    path: '/cosplay/profile',
+    name: 'profile',
+    component: Profile
+  },
+  {
+    path: '/cosplay/profile/edit',
+    name: 'edit',
+    component: ProfileEdit
+  },
+  {
+    path: '/about',
+    name: 'about',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =&gt; import(/* webpackChunkName: &quot;about&quot; */ '../views/AboutView.vue')
+  },
+  {
+    path: '/participation', // конкретный url-адрес
+    component: ParticipationView // Ссылка на компонент
+  },
+
+  {
+    path: '/experts', // конкретный url-адрес
+    component: ExpertsView // Ссылка на компонент
+  },
+  {
+    path: '/participants', // конкретный url-адрес
+    component: ParticipantsView // Ссылка на компонент
+  },
+
+  {
+    path: '/cosplay/profile/reg',
+    name: 'reg',
+    component: CosRegister
+  },
+
+  {
+    path: 'cosplay/profile/scoring',
+    name: 'scoring',
+    component: CosScoring
+  }
+]
+
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes
+})
+
+export default router
+</code></pre>
+<h3 id="_3">Главная страница</h3>
+<p><code>Home.vue</code></p>
+<pre><code class="language-javascript">&lt;template&gt;
+  &lt;div&gt;
+    &lt;v-card
+      elevation=&quot;2&quot;
+      outlined
+      class=&quot;my-2&quot;
+    &gt;
+      &lt;v-card-title&gt;
+        &lt;h2&gt;Добро пожаловать на фестиваль косплеев!&lt;/h2&gt;
+      &lt;/v-card-title&gt;  
+      &lt;v-card-text&gt;
+        &lt;h3&gt;
+          &lt;a href=&quot;/participation&quot; style=&quot;text-decoration: none;&quot;&gt;Участия&lt;/a&gt;&lt;br&gt;
+          &lt;a href=&quot;/experts&quot; style=&quot;text-decoration: none;&quot;&gt;Эксперты&lt;/a&gt;&lt;br&gt;
+          &lt;a href=&quot;/participants&quot; style=&quot;text-decoration: none;&quot;&gt;Участники&lt;/a&gt; &lt;br&gt;
+          &lt;template  v-if=&quot;this.authorized&quot;&gt;
+            &lt;a @click=&quot;goProfile&quot;&gt;Личный кабинет&lt;/a&gt;&lt;br&gt;
+            &lt;a @click=&quot;goLogOut&quot;&gt;Выйти&lt;/a&gt;&lt;br&gt;
+          &lt;/template&gt;
+          &lt;template v-else&gt;
+            &lt;a @click=&quot;goSignIn&quot;&gt;Войти&lt;/a&gt;&lt;br&gt;
+            &lt;router-link to=&quot;/cosplay/signup&quot;&gt;Зарегистрироваться&lt;/router-link&gt;
+          &lt;/template&gt;
+        &lt;/h3&gt;
+      &lt;/v-card-text&gt;
+    &lt;/v-card&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+// @ is an alias to /src
+/* eslint-disable */
+
+export default {
+  name: 'Home',
+
+  data: () =&gt; ({
+    authorized: false
+  }),
+
+  created () {
+    console.log('token is ' + sessionStorage.getItem('auth_token'))
+    console.log('username is ' + sessionStorage.getItem('username'))
+    if (sessionStorage.getItem('auth_token')) {
+      if (sessionStorage.getItem('auth_token') !== '-1') {
+        this.authorized = true
+      }
+    }
+  },
+
+  methods: {
+
+    goProfile () {
+      this.$router.push({ name: 'profile' })
+    },
+
+    goLogOut () {
+      this.$router.push({ name: 'logout' })
+    },
+
+    goSignIn () {
+      this.$router.push({ name: 'signin' })
+    }
+  }
+}
+&lt;/script&gt;
+
+</code></pre>
+<h3 id="_4">Личный кабинет</h3>
+<p><code>SignIn.vue</code></p>
+<pre><code class="language-javascript">&lt;template&gt;
+  &lt;div class=&quot;signIn&quot;&gt;
+    &lt;h2&gt;Авторизация&lt;/h2&gt;
+    &lt;form
+      @submit.prevent=&quot;setLogin&quot;
+      ref=&quot;signInForm&quot;
+      class=&quot;my-2&quot;&gt;
+          &lt;input type=&quot;text&quot;
+                 label=&quot;Логин&quot;
+                 placeholder=&quot;Логин&quot;
+                 v-model=&quot;login&quot;
+                 name=&quot;login&quot;&gt;
+          &lt;input
+            label=&quot;Пароль&quot;
+            placeholder=&quot;Пароль&quot;
+            v-model=&quot;password&quot;
+            name=&quot;password&quot;
+            type=&quot;password&quot;&gt;
+          &lt;button type=&quot;submit&quot;&gt;Авторизоваться&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;p class=&quot;mt-15&quot;&gt;Ещё нет аккаунта?&lt;br&gt;
+      &lt;router-link to=&quot;/show/signup&quot;&gt;Зарегистрироваться&lt;/router-link&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+/* eslint-disable */
+
+import $ from &quot;jquery&quot;;
+import axios from &quot;axios&quot;;
+    export default {
+      name: &quot;AuthModals&quot;,
+      data() {
+        return {
+          login: '',
+          password: '',
+        }
+      },
+      methods: {
+        setLogin() {
+                $.ajax({
+                    url: &quot;http://127.0.0.1:8000/auth/token/login&quot;,
+                    type: &quot;POST&quot;,
+                    data: {
+                        username: this.login,
+                        password: this.password
+                    },
+                    success: (response) =&gt; {
+                        alert(&quot;Авторизация успешна&quot;)
+                        sessionStorage.setItem(&quot;auth_token&quot;, response.auth_token)
+                        sessionStorage.setItem(&quot;username&quot;, this.login)
+                        this.$router.push({name: &quot;home&quot;})
+                    },
+                    error: (response) =&gt; {
+                        if (response.status === 400) {
+                            alert(&quot;Неверный логин или пароль&quot;)
+                        }
+                    }
+                })
+            }
+      }
+    }
+&lt;/script&gt;
+
+&lt;style&gt;
+&lt;/style&gt;
+
+</code></pre>
+<p><code>SignUp.vue</code></p>
+<pre><code class="language-javascript">&lt;template&gt;
+  &lt;div class=&quot;signup&quot;&gt;
+    &lt;h2&gt;Регистрация&lt;/h2&gt;
+    &lt;form
+      @submit.prevent=&quot;signUp&quot;
+      ref=&quot;signUpForm&quot;
+      class=&quot;my-2&quot;&gt;
+
+          &lt;input type=&quot;text&quot;
+            label=&quot;Логин&quot; placeholder=&quot;Логин&quot; v-model=&quot;login&quot; name=&quot;login&quot;&gt;
+
+          &lt;input
+            label=&quot;Пароль&quot;
+            placeholder=&quot;Пароль&quot;
+            v-model=&quot;password&quot;
+            name=&quot;password&quot;
+            type=&quot;password&quot;&gt;
+
+          &lt;button type=&quot;submit&quot;&gt;Зарегистрироваться&lt;/button&gt;
+
+    &lt;/form&gt;
+    &lt;p class=&quot;mt-15&quot;&gt;Уже зарегистрированы? &lt;router-link to=&quot;/cosplay/signin&quot;&gt;Войти&lt;/router-link&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+/* eslint-disable */
+import $ from &quot;jquery&quot;;
+export default {
+  name: 'SignUp',
+  data() {
+    return {
+      login: '',
+      password: '',
+    }
+  },
+  methods: {
+    async signUp () {
+      console.log(&quot;1&quot;)
+      $.ajax({
+                type: &quot;POST&quot;,
+                data: {
+                        username: this.login,
+                        password: this.password
+                },
+                url: &quot;http://127.0.0.1:8000/auth/users/&quot;
+            }).done(function () {
+                console.log(this.data)
+                alert(&quot;Вы успешно зарегистрировались на сайте&quot;)
+                //this.$router.push({ name: 'signin' })
+            });
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+&lt;/style&gt;
+</code></pre>
+<p><code>SignOut.vue</code></p>
+<pre><code class="language-javascript">&lt;script&gt;
+import axios from 'axios'
+/* eslint-disable */
+//Vue.prototype.$axios = axios
+//import Vue from 'vue'
+
+export default {
+  name: 'LogOut',
+  methods: {
+    LogOut () {
+      try {
+        const token = sessionStorage.getItem('auth_token')
+        if (token) {     
+          const data = {}    
+          console.log(token)
+          //this.axios.defaults.headers.common.Authorization = `token ${token}`
+          //console.log(this.axios)
+
+          sessionStorage.setItem('auth_token', '-1')
+          //console.log('h ' + token)
+          axios.post('http://127.0.0.1:8000/auth/token/logout/', data, {
+            headers: {
+            'Authorization': `token ${token}` 
+            }
+          }).then(response =&gt; {
+            console.log('SIGN OUT RESPONSE', response)
+          // localStorage.removeItem('token')
+          // this.$bus.$emit('logged', 'User logged out')
+            this.$router.push({ name: 'home' })
+        })
+        }
+
+      } catch (e) {
+        console.error('AN API ERROR', e)
+      }
+    }
+  },
+  created () {
+    this.LogOut()
+  }
+}
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+&lt;/style&gt;
+
+</code></pre>
+<p><code>Profile.vue</code></p>
+<pre><code class="language-javascript">&lt;template&gt;
+  &lt;div class=&quot;edit&quot;&gt;
+    &lt;h2&gt;Личный кабинет&lt;/h2&gt;
+    &lt;h3&gt;Вы авторизованы как: {{login ()}}&lt;/h3&gt;
+    &lt;v-card&gt;
+      &lt;v-card-text style=&quot;margin-top:1cm&quot;&gt;
+        &lt;div class=&quot;text--primary&quot;&gt;
+          Имя: &lt;b&gt;{{ this.first_name }}&lt;/b&gt; &lt;br&gt;
+          Фамилия: &lt;b&gt;{{ this.last_name }} &lt;/b&gt;&lt;br&gt;
+          Телефон: &lt;b&gt;{{ this.tel }} &lt;/b&gt;&lt;br&gt;
+        &lt;/div&gt;&lt;br&gt;&lt;br&gt;
+        &lt;a @click.prevent=&quot;goRegister&quot;&gt;Зарегистрировать участника&lt;/a&gt; &lt;br&gt;
+        &lt;a @click.prevent=&quot;goScore&quot;&gt;Оценить участника&lt;/a&gt; &lt;br&gt;
+        &lt;a @click.prevent=&quot;goEdit&quot;&gt;Редактировать профиль&lt;/a&gt; &lt;br&gt;
+        &lt;a @click.prevent=&quot;goHome&quot;&gt;На главную&lt;/a&gt;
+      &lt;/v-card-text&gt;
+    &lt;/v-card&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+/* eslint-disable */
+export default {
+  name: 'Profile',
+  data () {
+    return {
+      first_name: '',
+      last_name: '',
+      tel: '',
+    }
+  },
+  created () {
+    this.loadInfo()
+  },
+  methods: {
+    async loadInfo () {
+      const response = await this.axios
+        .get('http://127.0.0.1:8000/auth/users/me/', {
+          headers: {
+            Authorization: `Token ${sessionStorage.getItem('auth_token')}`
+          }
+        })
+      this.first_name = response.data.first_name
+      this.last_name = response.data.last_name
+      this.tel = response.data.tel
+    },
+    goHome () {
+      this.$router.push({ name: 'home' })
+    },
+
+    goRegister () {
+      this.$router.push({ name: 'reg' })
+    },
+
+    goScore () {
+      this.$router.push({ name: 'scoring' })
+    },
+
+    goEdit () {
+      this.$router.push({ name: 'edit' })
+    },
+
+    login () {
+      return (sessionStorage.getItem('username'))
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+
+&lt;/style&gt;
+
+</code></pre>
+<p><code>ProfileEdit.vue</code></p>
+<pre><code class="language-javascript">&lt;template&gt;
+  &lt;div class=&quot;edit&quot;&gt;
+    &lt;h2&gt;Редактирование профиля&lt;/h2&gt;
+    &lt;v-form
+      @submit.prevent=&quot;saveChanges&quot;
+      ref=&quot;changeForm&quot;
+      class=&quot;my-2&quot;&gt;
+      &lt;v-row&gt;
+        &lt;v-col cols=&quot;5&quot; class=&quot;mx-auto&quot;&gt;
+
+          &lt;v-text-field
+            label=&quot;Имя&quot;
+            v-model=&quot;changeForm.first_name&quot;
+            name=&quot;first_name&quot;/&gt;
+
+          &lt;v-text-field
+            label=&quot;Фамилия&quot;
+            v-model=&quot;changeForm.last_name&quot;
+            name=&quot;last_name&quot;/&gt;
+
+          &lt;v-text-field
+            label=&quot;Телефон&quot;
+            v-model=&quot;changeForm.tel&quot;
+            name=&quot;tel&quot;/&gt;
+
+          &lt;v-btn type=&quot;submit&quot; color=&quot;primary&quot; dark&gt;Сохранить&lt;/v-btn&gt;
+        &lt;/v-col&gt;
+      &lt;/v-row&gt;
+    &lt;/v-form&gt;
+    &lt;p class=&quot;mt-15&quot;&gt;&lt;router-link to=&quot;/cosplay/profile&quot;&gt;Назад&lt;/router-link&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  name: 'ProfileEdit',
+
+  data: () =&gt; ({
+    participant_old: Object,
+    changeForm: {
+      first_name: '',
+      last_name: '',
+      tel: '',
+    },
+  }),
+
+  methods: {
+    async loadReaderData () {
+      const response = await this.axios
+        .get('http://127.0.0.1:8000/auth/users/me/', {
+          headers: {
+            Authorization: `Token ${sessionStorage.getItem('auth_token')}`
+          }
+        })
+      this.participant_old = response.data
+      this.changeForm.first_name = response.data.first_name
+      this.changeForm.last_name = response.data.last_name
+      this.changeForm.tel = response.data.tel
+    },
+    async saveChanges () {
+      for (const [key, value] of Object.entries(this.changeForm)) {
+        if (value === '') {
+          delete this.changeForm[key]
+        }
+      }
+      try {
+        const response = await this.axios
+          .patch('http://127.0.0.1:8000/auth/users/me/',
+            this.changeForm, {
+              headers: {
+                Authorization: `Token ${sessionStorage.getItem('auth_token')}`
+              }
+            })
+        console.log(response)
+        this.$refs.changeForm.reset()
+        await this.$router.push({ name: 'profile' })
+      } catch (e) {
+        console.error(e.message)
+      }
+      }
+    }
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+&lt;/style&gt;
+</code></pre>
+<p><code>CosRegister.vue</code></p>
+<pre><code class="language-javascript">&lt;template&gt;
+   &lt;div class=&quot;edit&quot;&gt;
+    &lt;h3&gt;Регистрация участника&lt;/h3&gt;
+      &lt;v-form
+      @submit.prevent=&quot;signCos&quot;
+      ref=&quot;editForm&quot;
+      class=&quot;my-2&quot;&gt;
+      &lt;v-row&gt;
+        &lt;v-col cols=&quot;5&quot; class=&quot;mx-auto&quot;&gt;
+
+          &lt;v-text-field
+            label=&quot;Никнейм&quot;
+            v-model=&quot;editForm.name&quot;
+            name=&quot;name&quot;/&gt;
+
+          &lt;v-select
+            v-model=&quot;editForm.fandom&quot;
+            :items=&quot;options&quot;
+            name=&quot;fandom&quot;
+            label=&quot;Фандом&quot;
+          &gt;&lt;/v-select&gt;
+
+          &lt;v-text-field
+            label=&quot;Возраст&quot;
+            v-model=&quot;editForm.age&quot;
+            name=&quot;age&quot;
+            type=&quot;number&quot;/&gt;
+
+          &lt;v-text-field
+            label=&quot;Персонаж&quot;
+            v-model=&quot;editForm.character&quot;
+            name=&quot;character&quot;/&gt;
+
+            &lt;v-btn type=&quot;submit&quot; color=&quot;primary&quot; dark&gt;Зарегистрировать&lt;/v-btn&gt;
+        &lt;/v-col&gt;
+      &lt;/v-row&gt;
+    &lt;/v-form&gt;
+    &lt;v-card&gt;
+      &lt;v-card-text style=&quot;margin-top:1cm&quot;&gt;
+        &lt;a @click.prevent=&quot;goProfile&quot;&gt;Назад&lt;/a&gt;
+      &lt;/v-card-text&gt;
+    &lt;/v-card&gt;
+   &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import $ from &quot;jquery&quot;;
+export default {
+  name: 'CosRegister',
+  data: () =&gt; ({
+    editForm: {
+      name: '',
+      fandom: '',
+      age: '',
+      character: '',
+    },
+
+    options: ['n', 'h', 's', 'd'],
+  }),
+    methods: {
+        async signCos () {
+          console.log(1)
+          $.ajax({
+                    type: &quot;POST&quot;,
+                    data: {
+                            name: this.editForm.name,
+                            fandom: this.editForm.fandom,
+                            age: this.editForm.age,
+                            character: this.editForm.character
+                    },
+                    url: &quot;http://127.0.0.1:8000/participants/&quot;
+                }).done(function () {
+                    console.log(this.data)
+                    alert(&quot;Участник добавлен&quot;)
+                });
+        },
+
+        goProfile () {
+        this.$router.push({ name: 'profile' })
+        },
+    }
+}
+
+&lt;/script&gt;
+</code></pre>
+<p><code>CosScoring.vue</code></p>
+<pre><code class="language-javascript">&lt;template&gt;
+  &lt;div class=&quot;edit&quot;&gt;
+    &lt;h2&gt;Личный кабинет&lt;/h2&gt;
+    &lt;h3&gt;Форма оценивания участника&lt;/h3&gt;
+    &lt;v-form
+      @submit.prevent=&quot;signPart&quot;
+      ref=&quot;editFormPart&quot;
+      class=&quot;my-2&quot;&gt;
+      &lt;v-row&gt;
+        &lt;v-col cols=&quot;5&quot; class=&quot;mx-auto&quot;&gt;
+
+          &lt;v-select
+            v-model=&quot;editFormPart.participant&quot;
+            :items=&quot;participants&quot;
+            item-text=&quot;name&quot;
+            item-value=&quot;id&quot;
+            name=&quot;participant&quot;
+            label=&quot;Участник&quot;
+          &gt;&lt;/v-select&gt;
+
+          &lt;v-select
+            v-model=&quot;editFormPart.medal&quot;
+            :items=&quot;medals&quot;
+            name=&quot;medal&quot;
+            label=&quot;Медаль&quot;
+          &gt;&lt;/v-select&gt;
+
+          &lt;v-checkbox
+            v-model=&quot;editFormPart.dismissed&quot;
+            :label=&quot;'Дисквалификация'&quot;
+            input-value=&quot;true&quot;
+          &gt;&lt;/v-checkbox&gt;
+
+          &lt;v-text-field
+            label=&quot;Оценка&quot;
+            v-model=&quot;editFormPart.final_grade&quot;
+            type='number'
+            name=&quot;final_grade&quot;/&gt;
+
+            &lt;v-btn type=&quot;submit&quot; color=&quot;primary&quot; dark&gt;Оценить&lt;/v-btn&gt;
+        &lt;/v-col&gt;
+      &lt;/v-row&gt;
+    &lt;/v-form&gt;
+    &lt;v-card&gt;
+      &lt;v-card-text style=&quot;margin-top:1cm&quot;&gt;
+        &lt;a @click.prevent=&quot;goHome&quot;&gt;На главную&lt;/a&gt;
+      &lt;/v-card-text&gt;
+    &lt;/v-card&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import $ from &quot;jquery&quot;;
+const array1 = [];
+import axios from &quot;axios&quot;;
+
+export default {
+  name: 'CosScoring',
+  data: () =&gt; ({
+
+    editFormPart: {
+      medal: &quot;&quot;,
+      dismissed: &quot;&quot;,
+      final_grade: &quot;&quot;,
+      participant: &quot;&quot;,
+    },
+
+    medals: ['g', 's', 'b'],
+    participants: array1,
+  }),
+  methods: {
+
+    async signPart() {
+      console.log(1)
+      $.ajax({
+        type: &quot;POST&quot;,
+        data: {
+          medal: this.editFormPart.medal,
+          dismissed: this.editFormPart.dismissed,
+          final_grade: this.editFormPart.final_grade,
+          participant: this.editFormPart.participant,
+        },
+        url: &quot;http://127.0.0.1:8000/participation/&quot;
+      }).done(function () {
+        console.log(this.data)
+        alert(&quot;Готово&quot;)
+      });
+    },
+    goHome() {
+      this.$router.push({name: 'home'})
+    }
+  },
+  beforeMount: function () {
+    this.$nextTick(async function () {
+      const response = await axios.get('http://127.0.0.1:8000/participants/?format=json')
+      for (let part of response.data) {
+        array1.push(part);
+      }
+    })
+  }
+}
+
+&lt;/script&gt;
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
